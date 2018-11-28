@@ -29,8 +29,8 @@ create table bicicleta(
 create table historico(
 	id int auto_increment primary key,
 	acao varchar(255),
-	datainicio date not null,
-	datafim date,
+	data_inicio date not null,
+	data_fim date,
 	matricula int not null,
 	pendencia varchar(255),
 	id_bicicleta int,

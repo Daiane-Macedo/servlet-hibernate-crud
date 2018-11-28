@@ -12,7 +12,7 @@ import br.com.dac.dao.UsersDao;
 
 @WebServlet(
         name = "UserManageServlet",
-        urlPatterns = {"/"}
+        urlPatterns = {"/userList"}
 )
 public class UsersListServlet extends HttpServlet {
 

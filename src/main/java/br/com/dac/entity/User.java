@@ -32,7 +32,10 @@ public class User {
 
     @Column
     private String matricula;
-
+    
+    @Column
+    private Boolean pendencia;
+    
 	public Integer getId() {
 		return id;
 	}
@@ -80,6 +83,13 @@ public class User {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
+
+	public Boolean getPendencia() {
+		return pendencia;
+	}
+
+	public void setPendencia(Boolean pendencia) {
+		this.pendencia = pendencia;
+	}
 
 }
