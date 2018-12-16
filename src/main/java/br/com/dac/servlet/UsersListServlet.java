@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.dac.dao.UsersDao;
 
 @WebServlet(
-        name = "UserManageServlet",
+        name = "UserListServlet",
         urlPatterns = {"/userList"}
 )
 public class UsersListServlet extends HttpServlet {

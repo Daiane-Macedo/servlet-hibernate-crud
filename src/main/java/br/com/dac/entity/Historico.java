@@ -3,7 +3,9 @@ package br.com.dac.entity;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 
+@Entity
 public class Historico {
 	
 	@Column

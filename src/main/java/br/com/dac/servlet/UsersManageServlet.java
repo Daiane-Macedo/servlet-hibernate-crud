@@ -13,7 +13,7 @@ import br.com.dac.entity.User;
 import java.io.IOException;
 
 @WebServlet(
-        name = "UsersListServlet",
+        name = "UsersManageServlet",
         urlPatterns = {"/users"}
 )
 public class UsersManageServlet extends HttpServlet {
@@ -44,7 +44,7 @@ public class UsersManageServlet extends HttpServlet {
         }
 
         user.setNome(req.getParameter("nome"));
-        user.setCpf(parseInt(req.getParameter("cpf")));
+        user.setCpf(Integer.parseInt(req.getParameter("cpf")));
         user.setEmail(req.getParameter("email"));
         user.setMatricula(req.getParameter("matricula"));
         user.setSenha(req.getParameter("senha"));
@@ -61,7 +61,32 @@ public class UsersManageServlet extends HttpServlet {
         }
 
         dao.save(user);
-        resp.sendRedirect("/");
+        resp.sendRedirect("/userList");
+    }
+    
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String type = req.getParameter("type");
+        if (!type.equals("user")) {
+            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+        }
+        Integer id = Helper.requestParameterInt(req, "id");
+        if (id == null) {
+            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+            return;
+        }
+
+        if (type.equals("user")) {
+            UsersDao dao = UsersDao.getInstanse();
+            User user = dao.findById(id.intValue());
+            if (user == null) {
+                resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+                return;
+            }
+
+            dao.delete(user);
+        }
+        resp.sendRedirect("/userList");
     }
 
 	private int parseInt(String parameter) {

@@ -55,8 +55,6 @@
                     <tr>
                         <td colspan="8" class="hiddenRow">
                             <div class="accordian-body collapse" id="tableuser${user.getId()}">
-                                <h4 style="float: left;">Traffic cources</h4>
-                                <a class="btn btn-default" href="/traffic-sources?userId=${user.getId()}" style="margin: 2px 0px 0px 12px;">Add</a>
                                 <table class="table table-striped">
                                     <thead>
                                     <tr>
@@ -77,7 +75,7 @@
                                             <td>${ts.getUrl()}</td>
                                             <td>${ts.getCost()}</td>
                                             <td>
-                                                <a class="btn btn-default" href="/traffic-sources?tsId=${ts.getId()}">Edit</a>
+                                                <a class="btn btn-default">Edit</a>
                                             </td>
                                             <td>
                                                 <form action="/delete" method="post">

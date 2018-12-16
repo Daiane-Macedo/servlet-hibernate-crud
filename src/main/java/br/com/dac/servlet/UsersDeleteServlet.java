@@ -16,7 +16,7 @@ import br.com.dac.entity.User;
         name = "DeleteServlet",
         urlPatterns = {"/delete"}
 )
-public class DeleteServlet extends HttpServlet {
+public class UsersDeleteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String type = req.getParameter("type");
@@ -39,6 +39,6 @@ public class DeleteServlet extends HttpServlet {
 
             dao.delete(user);
         }
-        resp.sendRedirect("/");
+        resp.sendRedirect("/usersList");
     }
 }
