@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="box">
-	<a href="/userList" id=user>Usuários</a>
+	<a href="/usersList" id=user>Usuários</a>
 	<a href="/listaEstacoes">Estações</a>
 	<a href="/listaBikes">Bicicletas</a>	
 </div>

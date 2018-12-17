@@ -61,7 +61,7 @@ public class UsersManageServlet extends HttpServlet {
         }
 
         dao.save(user);
-        resp.sendRedirect("/userList");
+        resp.sendRedirect("/usersList");
     }
     
     @Override
@@ -86,7 +86,7 @@ public class UsersManageServlet extends HttpServlet {
 
             dao.delete(user);
         }
-        resp.sendRedirect("/userList");
+        resp.sendRedirect("/usersList");
     }
 
 	private int parseInt(String parameter) {
