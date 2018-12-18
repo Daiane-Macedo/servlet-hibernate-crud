@@ -13,11 +13,11 @@ public class Bicicleta {
 	@Column
 	private boolean ativa;
 	
-	@Column
-	private boolean em_uso;
+	@Column(name="em_uso")
+	private boolean emUso;
 	
-	@Column
-	private int id_estacao;
+	@Column(name="id_estacao")
+	private int idEstacao;
 
 	public int getId() {
 		return id;
@@ -35,20 +35,20 @@ public class Bicicleta {
 		this.ativa = ativa;
 	}
 
-	public boolean isEm_uso() {
-		return em_uso;
+	public boolean emUso() {
+		return emUso;
 	}
 
-	public void setEm_uso(boolean em_uso) {
-		this.em_uso = em_uso;
+	public void setEmUso(boolean em_uso) {
+		this.emUso = em_uso;
 	}
 
-	public int getId_estacao() {
-		return id_estacao;
+	public int getIdEstacao() {
+		return idEstacao;
 	}
 
-	public void setId_estacao(int id_estacao) {
-		this.id_estacao = id_estacao;
+	public void setId_estacao(int idEstacao) {
+		this.idEstacao = idEstacao;
 	}
 	
 	

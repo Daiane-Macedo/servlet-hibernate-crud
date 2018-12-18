@@ -21,7 +21,7 @@ public class User {
     @Column(name = "nome")
     private String nome;
 
-    @Column(name = "cpf")
+    @Column
     private int cpf;
     
     @Column
