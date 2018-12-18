@@ -2,18 +2,22 @@ package br.com.dac.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 @NamedQueries({
     @NamedQuery(name = "Bicicleta.findAll", query = "SELECT b FROM Bicicleta b")
-    , @NamedQuery(name = "Bicicleta.findByIdBicicleta", query = "SELECT b FROM Bicicleta b WHERE b.idBicicleta = :idBicicleta")
+    , @NamedQuery(name = "Bicicleta.findBicicletaById", query = "SELECT b FROM Bicicleta b WHERE b.id = :id")
     , @NamedQuery(name = "Bicicleta.findByCodigo", query = "SELECT b FROM Bicicleta b WHERE b.codigo = :codigo")
     , @NamedQuery(name = "Bicicleta.findByAtiva", query = "SELECT b FROM Bicicleta b WHERE b.ativa = :ativa")})
 
+
 @Entity
+@Table(name = "bicicleta")
 public class Bicicleta {
-	
+	@Id
 	@Column
 	private int id;
 	
@@ -25,6 +29,9 @@ public class Bicicleta {
 	
 	@Column(name="id_estacao")
 	private int idEstacao;
+	
+	@Column(name="codigo")
+	private int codigo;
 
 	public int getId() {
 		return id;
@@ -42,10 +49,10 @@ public class Bicicleta {
 		this.ativa = ativa;
 	}
 
-	public boolean emUso() {
+	public boolean isEmUso() {
 		return emUso;
 	}
-
+	
 	public void setEmUso(boolean em_uso) {
 		this.emUso = em_uso;
 	}
@@ -54,7 +61,15 @@ public class Bicicleta {
 		return idEstacao;
 	}
 
-	public void setId_estacao(int idEstacao) {
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public void setIdEstacao(int idEstacao) {
 		this.idEstacao = idEstacao;
 	}
 	

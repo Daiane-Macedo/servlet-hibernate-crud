@@ -31,7 +31,7 @@
 		<div class="box">
 			<a href="/usersList">Usuários</a>
 			<a href="/listaEstacoes">Estações</a>
-			<a href="/listaBikes">Bicicletas</a>	
+			<a href="/listaBicicletas">Bicicletas</a>	
 		</div>
 	</body>
 </html>

@@ -64,31 +64,7 @@ public class UsersManageServlet extends HttpServlet {
         resp.sendRedirect("/usersList");
     }
     
-    @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String type = req.getParameter("type");
-        if (!type.equals("user")) {
-            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
-        }
-        Integer id = Helper.requestParameterInt(req, "id");
-        if (id == null) {
-            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
-            return;
-        }
-
-        if (type.equals("user")) {
-            UsuarioDAO dao = UsuarioDAO.getInstanse();
-            User user = dao.findById(id.intValue());
-            if (user == null) {
-                resp.sendError(HttpServletResponse.SC_NOT_FOUND);
-                return;
-            }
-
-            dao.delete(user);
-        }
-        resp.sendRedirect("/usersList");
-    }
-
+   
 	private int parseInt(String parameter) {
 		// TODO Auto-generated method stub
 		return 0;

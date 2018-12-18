@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="pt-br">
 <head>
-    <title>Users</title>
+    <title>bicicletas</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -14,45 +14,43 @@
 
     <div class="panel panel-default">
         <div class="panel-heading" style="height: 73px;">
-            <h3 style="float: left;">Users</h3>
-            <a class="btn btn-default" href="/users" style="margin: 16px 0px 0px 17px;">Create user</a>
+            <h3 style="float: left;">bicicletas</h3>
+            <a class="btn btn-default" href="/bicicletas" style="margin: 16px 0px 0px 17px;">Create bicicleta</a>
         </div>
         <div class="panel-body">
             <table class="table table-condensed" style="border-collapse:collapse;">
 
                 <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <!-- <th>Birth Date</th> -->
-                    <th>Matricula</th>
-                    <th>E-mail</th>
+                    <th>Código</th>
+                    <th>Estação</th>
+                    <th>Ativa</th>
+                    <th>Em Uso</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
                 </thead>
 
                 <tbody>
-                <c:forEach var="user" items="${users}">
-                    <tr data-toggle="collapse" data-target="#tableuser${user.getId()}" class="accordion-toggle">
-                        <td>${user.getId()}</td>
-                        <td>${user.getNome()}</td>
-                        <td>${user.getCpf()}</td>
-                        <td>${user.getMatricula()}</td>
-                        <td>${user.getEmail()}</td>
+                <c:forEach var="bicicleta" items="${bicicletas}">
+                    <tr data-toggle="collapse" data-target="#tablebicicleta${bicicleta.getId()}" class="accordion-toggle">
+                        <td>${bicicleta.getCodigo()}</td>
+                        <td>${bicicleta.getIdEstacao()}</td>
+                        <td>${bicicleta.isAtiva()}</td>
+                        <td>${bicicleta.isEmUso()}</td>
                         <td>
-                            <a class="btn btn-default" href="/users?id=${user.getId()}">Edit</a>
+                            <a class="btn btn-default" href="/bicicletas?id=${bicicleta.getId()}">Edit</a>
                         </td>
                         <td>
-                            <form action="/delete" method="post">
-                                <input name="id" type="hidden" value="${user.getId()}"/>
-                                <input name="type" type="hidden" value="user"/>
+                            <form action="#" method="post">
+                                <input name="id" type="hidden" value="${bicicleta.getId()}"/>
+                                <input name="type" type="hidden" value="bicicleta"/>
                                 <button class="btn btn-default" type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>
-                  </c:forEach>
+                 
+                </c:forEach>
                 </tbody>
             </table>
         </div>

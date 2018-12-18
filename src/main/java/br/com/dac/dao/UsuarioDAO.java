@@ -20,7 +20,7 @@ public class UsuarioDAO {
 
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
-    private UsuarioDAO() {}
+    UsuarioDAO() {}
 
     public List<User> findAll() {
         Session session = sessionFactory.getCurrentSession();

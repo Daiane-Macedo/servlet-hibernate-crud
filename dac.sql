@@ -23,6 +23,7 @@ create table bicicleta(
 	ativa boolean not null,
 	em_uso boolean not null,
 	id_estacao int not null,
+	codigo int not null,
 	foreign key(id_estacao) references estacao(id)
 );
 

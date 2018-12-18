@@ -16,14 +16,12 @@ public abstract class FactoryDAO {
 			throw new RuntimeException();
 		}
 	}
-	public abstract BicicletaDAO getBiciletaDAO();
+	public abstract BicicletaDAO getBicicletaDAO();
 
 	public abstract UsuarioDAO getUsuarioDAO();
-
-	/*	public abstract EstacaoDAO getEstacaoDAO();
+	
+	public abstract EstacaoDAO getEstacaoDAO();
 
 	public abstract HistoricoDAO getHistoricoDAO();
-
-	public abstract EstacaoSlotDAO getEstacaoSlotDao();*/
 
 }
