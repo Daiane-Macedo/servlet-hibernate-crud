@@ -2,7 +2,14 @@ package br.com.dac.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
+@NamedQueries({
+    @NamedQuery(name = "Bicicleta.findAll", query = "SELECT b FROM Bicicleta b")
+    , @NamedQuery(name = "Bicicleta.findByIdBicicleta", query = "SELECT b FROM Bicicleta b WHERE b.idBicicleta = :idBicicleta")
+    , @NamedQuery(name = "Bicicleta.findByCodigo", query = "SELECT b FROM Bicicleta b WHERE b.codigo = :codigo")
+    , @NamedQuery(name = "Bicicleta.findByAtiva", query = "SELECT b FROM Bicicleta b WHERE b.ativa = :ativa")})
 
 @Entity
 public class Bicicleta {

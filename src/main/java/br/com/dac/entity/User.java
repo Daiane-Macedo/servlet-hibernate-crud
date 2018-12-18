@@ -22,7 +22,7 @@ public class User {
     private String nome;
 
     @Column
-    private int cpf;
+    private Long cpf;
     
     @Column
     private String senha;

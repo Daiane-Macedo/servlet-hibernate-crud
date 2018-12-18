@@ -1,7 +1,7 @@
 create table usuario(
 	id int auto_increment primary key,
 	nome varchar(255) not null,
-	cpf int not null,
+	cpf bigint not null,
 	senha varchar(255) not null,
 	email varchar(255) not null,
 	matricula int not null,

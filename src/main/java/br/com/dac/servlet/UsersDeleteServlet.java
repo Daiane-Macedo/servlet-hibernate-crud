@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.dac.Helper;
-import br.com.dac.dao.UsersDao;
+import br.com.dac.dao.UsersDAO;
 import br.com.dac.entity.User;
 
 @WebServlet(
@@ -30,7 +30,7 @@ public class UsersDeleteServlet extends HttpServlet {
         }
 
         if (type.equals("user")) {
-            UsersDao dao = UsersDao.getInstanse();
+            UsersDAO dao = UsersDAO.getInstanse();
             User user = dao.findById(id.intValue());
             if (user == null) {
                 resp.sendError(HttpServletResponse.SC_NOT_FOUND);
