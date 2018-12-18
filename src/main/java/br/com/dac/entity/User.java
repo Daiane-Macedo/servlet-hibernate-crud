@@ -1,11 +1,8 @@
 package br.com.dac.entity;
 
-import lombok.ToString;
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
-import java.util.*;
+
+import lombok.ToString;
 
 @Entity
 @Table(name = "usuario")
@@ -29,7 +26,7 @@ public class User {
     private String email;
 
     @Column
-    private String matricula;
+    private Long matricula;
     
     @Column
     private Boolean pendencia;
@@ -66,11 +63,11 @@ public class User {
 		this.email = email;
 	}
 
-	public String getMatricula() {
+	public Long getMatricula() {
 		return matricula;
 	}
 
-	public void setMatricula(String matricula) {
+	public void setMatricula(Long matricula) {
 		this.matricula = matricula;
 	}
 

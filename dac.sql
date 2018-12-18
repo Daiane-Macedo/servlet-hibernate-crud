@@ -4,7 +4,7 @@ create table usuario(
 	cpf bigint not null,
 	senha varchar(255) not null,
 	email varchar(255) not null,
-	matricula int not null,
+	matricula bigint not null,
 	pendencia varchar(255)
 );
 

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.dac.Helper;
-import br.com.dac.dao.UsersDAO;
+import br.com.dac.dao.UsuarioDAO;
 import br.com.dac.entity.User;
 
 import java.io.IOException;
@@ -21,7 +21,7 @@ public class UsersManageServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Integer userId = Helper.requestParameterInt(req, "id");
         if (userId != null) {
-            UsersDAO dao = UsersDAO.getInstanse();
+            UsuarioDAO dao = UsuarioDAO.getInstanse();
             User user = dao.findById(userId.intValue());
             req.setAttribute("user", user);
         }
@@ -33,7 +33,7 @@ public class UsersManageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Integer userId = Helper.requestParameterInt(req, "id");
         User user = null;
-        UsersDAO dao = UsersDAO.getInstanse();
+        UsuarioDAO dao = UsuarioDAO.getInstanse();
 
         if (userId != null) {
             user = dao.findById(userId.intValue());
@@ -44,9 +44,9 @@ public class UsersManageServlet extends HttpServlet {
         }
 
         user.setNome(req.getParameter("nome"));
-        user.setCpf(Integer.parseInt(req.getParameter("cpf")));
+        user.setCpf(Long.parseLong(req.getParameter("cpf")));
         user.setEmail(req.getParameter("email"));
-        user.setMatricula(req.getParameter("matricula"));
+        user.setMatricula(Long.parseLong(req.getParameter("matricula")));
         user.setSenha(req.getParameter("senha"));
         if (
                 user.getNome() == null || user.getNome().length() == 0) { 
@@ -77,7 +77,7 @@ public class UsersManageServlet extends HttpServlet {
         }
 
         if (type.equals("user")) {
-            UsersDAO dao = UsersDAO.getInstanse();
+            UsuarioDAO dao = UsuarioDAO.getInstanse();
             User user = dao.findById(id.intValue());
             if (user == null) {
                 resp.sendError(HttpServletResponse.SC_NOT_FOUND);

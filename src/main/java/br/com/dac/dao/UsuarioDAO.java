@@ -7,12 +7,12 @@ import br.com.dac.entity.User;
 
 import java.util.List;
 
-public class UsersDAO {
-    private static UsersDAO dao;
+public class UsuarioDAO {
+    private static UsuarioDAO dao;
 
-    public static UsersDAO getInstanse() {
+    public static UsuarioDAO getInstanse() {
         if (dao == null) {
-            dao = new UsersDAO();
+            dao = new UsuarioDAO();
         }
 
         return dao;
@@ -20,7 +20,7 @@ public class UsersDAO {
 
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
-    private UsersDAO() {}
+    private UsuarioDAO() {}
 
     public List<User> findAll() {
         Session session = sessionFactory.getCurrentSession();
