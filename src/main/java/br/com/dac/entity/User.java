@@ -1,6 +1,5 @@
 package br.com.dac.entity;
 
-import lombok.Data;
 import lombok.ToString;
 import org.hibernate.annotations.Type;
 
@@ -10,7 +9,6 @@ import java.util.*;
 
 @Entity
 @Table(name = "usuario")
-@Data
 @ToString
 public class User {
     @Id
@@ -52,11 +50,11 @@ public class User {
 		this.nome = nome;
 	}
 
-	public int getCpf() {
+	public Long getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(Long cpf) {
 		this.cpf = cpf;
 	}
 
