@@ -2,6 +2,8 @@ package br.com.dac.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -18,14 +20,15 @@ import javax.persistence.Table;
 @Table(name = "bicicleta")
 public class Bicicleta {
 	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private int id;
 	
 	@Column
-	private boolean ativa;
+	private int ativa;
 	
 	@Column(name="em_uso")
-	private boolean emUso;
+	private int emUso;
 	
 	@Column(name="id_estacao")
 	private int idEstacao;
@@ -41,20 +44,20 @@ public class Bicicleta {
 		this.id = id;
 	}
 
-	public boolean isAtiva() {
+	public int isAtiva() {
 		return ativa;
 	}
 
-	public void setAtiva(boolean ativa) {
+	public void setAtiva(int ativa) {
 		this.ativa = ativa;
 	}
 
-	public boolean isEmUso() {
+	public int isEmUso() {
 		return emUso;
 	}
 	
-	public void setEmUso(boolean em_uso) {
-		this.emUso = em_uso;
+	public void setEmUso(int emUso) {
+		this.emUso = emUso;
 	}
 
 	public int getIdEstacao() {

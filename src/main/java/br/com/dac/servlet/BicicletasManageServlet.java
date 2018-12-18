@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.dac.Helper;
 import br.com.dac.dao.BicicletaDAO;
 import br.com.dac.dao.FactoryDAO;
-import br.com.dac.dao.UsuarioDAO;
-import br.com.dac.entity.Bicicleta;
 import br.com.dac.entity.Bicicleta;
 
 @WebServlet(
@@ -38,37 +36,40 @@ public class BicicletasManageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
     	Integer bikeId = Helper.requestParameterInt(req, "id");
-    	
-    	BicicletaDAO dao = FactoryDAO.getFactory().getBicicletaDAO();
+
+    	BicicletaDAO<Bicicleta> dao = FactoryDAO.getFactory().getBicicletaDAO();
     	Bicicleta bicicleta = null;
     	
         if (bikeId != null) {
-	        bicicleta = FactoryDAO.getFactory().getBicicletaDAO().findByid(bikeId);		
+	        bicicleta = FactoryDAO.getFactory().getBicicletaDAO().findByid(bikeId.intValue());		
         }
 
         if (bikeId == null) {
             bicicleta = new Bicicleta();
         }
+        if (!(req.getParameter("idEstacao").isEmpty())) {
+        	bicicleta.setIdEstacao(Integer.parseInt(req.getParameter("idEstacao")));
+    	}
         if (!(req.getParameter("ativa").isEmpty())) { 
-        	bicicleta.setAtiva(Boolean.valueOf(req.getParameter("ativa")));
+        	bicicleta.setAtiva(Integer.parseInt(req.getParameter("ativa")));
         }
         if (!(req.getParameter("emUso").isEmpty())) {
-        	bicicleta.setEmUso(Boolean.valueOf(req.getParameter("emUso")));
+        	bicicleta.setEmUso(Integer.parseInt(req.getParameter("emUso")));
     	}
         if (!(req.getParameter("codigo").isEmpty())) {
         	bicicleta.setCodigo(Integer.parseInt(req.getParameter("codigo")));
         }
-        if (!(req.getParameter("idEstacao").isEmpty())) {
-        	bicicleta.setIdEstacao(Integer.parseInt(req.getParameter("idEstacao")));
-        }
-        if(bicicleta!= null) {
+        
+        if(bicicleta == null) {
 	        req.setAttribute("bicicleta", bicicleta);
 	        req.setAttribute("error", "Invalid data");
 	        req.getRequestDispatcher("bicicletasManage.jsp").forward(req, resp);  
 	        return;
         }
-        dao.save(bicicleta);
-        resp.sendRedirect("/listaBicicletas");
+        dao.beginTransaction();
+		dao.save(bicicleta);
+		dao.commitTransaction(); 
+		resp.sendRedirect("/listaBicicletas");
     
     	}
     	private int parseInt(String parameter) {
