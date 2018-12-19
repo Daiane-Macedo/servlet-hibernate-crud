@@ -10,7 +10,7 @@
         <servlet-class>br.com.dac.servlet</servlet-class>
 	</servlet>  
 	<servlet>
-        <servlet-name>DeleteServlet</servlet-name>
+        <servlet-name>UsersDeleteServlet</servlet-name>
         <servlet-class>br.com.dac.servlet</servlet-class>
 	</servlet>  
 	<servlet>
@@ -18,7 +18,7 @@
         <servlet-class>br.com.dac.servlet</servlet-class>
 	</servlet>  
 	<servlet>
-        <servlet-name>UsersManagerServlet</servlet-name>
+        <servlet-name>UsersManageServlet</servlet-name>
         <servlet-class>br.com.dac.servlet</servlet-class>
 	</servlet>   
 	<servlet>
@@ -26,15 +26,45 @@
         <servlet-class>br.com.dac.servlet</servlet-class>
 	</servlet>  
 	<servlet>
+        <servlet-name>BicicletaDeleteServlet</servlet-name>
+        <servlet-class>br.com.dac.servlet</servlet-class>
+	</servlet>  
+	<servlet>
         <servlet-name>BicicletasManageServlet</servlet-name>
         <servlet-class>br.com.dac.servlet</servlet-class>
 	</servlet>  
-		<servlet>
+	<servlet>
         <servlet-name>EstacaoListServlet</servlet-name>
         <servlet-class>br.com.dac.servlet</servlet-class>
+	</servlet> 
+	<servlet>
+        <servlet-name>EstacaoManagerServlet</servlet-name>
+        <servlet-class>br.com.dac.servlet</servlet-class>
 	</servlet>  
-	
-	
+	<servlet>
+        <servlet-name>EstacaoViewServlet</servlet-name>
+        <servlet-class>br.com.dac.servlet</servlet-class>
+	</servlet>	<servlet>
+        <servlet-name>AdministradoManagerServlet</servlet-name>
+        <servlet-class>br.com.dac.servlet</servlet-class>
+	</servlet>  
+	<servlet>
+        <servlet-name>AdministradoManagerServlet</servlet-name>
+        <servlet-class>br.com.dac.servlet</servlet-class>
+	</servlet>  
+	<servlet>
+        <servlet-name>HomeAdmServlet</servlet-name>
+        <servlet-class>br.com.dac.servlet</servlet-class>
+	</servlet>  
+	<servlet>
+        <servlet-name>HomeUserServlet</servlet-name>
+        <servlet-class>br.com.dac.servlet</servlet-class>
+	</servlet>  
+	<servlet>
+        <servlet-name>reservaServlet</servlet-name>
+        <servlet-class>br.com.dac.servlet</servlet-class>
+	</servlet>  	
+		
 	<servlet-mapping> 
  		<servlet-name>HomeUserServlet</servlet-name>
  		<url-pattern>/</url-pattern>
@@ -92,7 +122,7 @@
  	</servlet-mapping>
  	
  	 <servlet-mapping>
- 		<servlet-name>estacaoView</servlet-name>
+ 		<servlet-name>estacaoViewServlet</servlet-name>
  		<url-pattern>/estacaoView(</url-pattern>
  	</servlet-mapping>
  	

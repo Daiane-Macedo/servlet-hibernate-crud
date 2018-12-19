@@ -29,9 +29,14 @@ public class BicicletaListServlet extends HttpServlet{
     	BicicletaDAO<Bicicleta> dao = FactoryDAO.getFactory().getBicicletaDAO();
     	Bicicleta bicicleta = new Bicicleta();;
     	List<Bicicleta> bikes = new ArrayList<Bicicleta>();
-       
+    	List<Bicicleta> disponiveis = new ArrayList<Bicicleta>();
+    	
     	if (estacaoId != null) {
-	        bikes.add((Bicicleta)FactoryDAO.getFactory().getBicicletaDAO().findByEstacaoId(estacaoId.intValue()));		
+	        
+    		disponiveis = ((List<Bicicleta>)FactoryDAO.getFactory().getBicicletaDAO().findByEstacaoId(estacaoId.intValue()));	
+    		if(disponiveis != null)
+;    			bikes.addAll(disponiveis);
+
 	        req.setAttribute("bicicletas",bikes );
 		    req.getRequestDispatcher("bicicletasView.jsp").forward(req, resp);
 		    return ;

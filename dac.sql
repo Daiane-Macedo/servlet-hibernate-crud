@@ -1,4 +1,4 @@
-create table usuario(
+create table dac.usuario(
 	id int auto_increment primary key,
 	nome varchar(255) not null,
 	cpf bigint not null,
@@ -8,27 +8,27 @@ create table usuario(
 	pendencia varchar(255)
 );
 
-create table estacao(
+create table dac.estacao(
 	id int auto_increment primary key,
 	capacidade int not null,
 	qtd_slots_disp int not null,
-	ativa boolean not null,
+	ativa boolean not null DEFAULT 1,
 	nome varchar(255) not null,
 	latitude varchar(255),
 	longitude varchar(255),
 	localizacao varchar(255)
 );
 
-create table bicicleta(
+create table dac.bicicleta(
 	id int auto_increment primary key,
-	ativa boolean not null,
-	em_uso boolean not null,
+	ativa boolean not null DEFAULT 1,
+	em_uso boolean not null DEFAULT 0,
 	id_estacao int not null,
-	codigo int not null,
-	foreign key(id_estacao) references estacao(id)
+	codigo int not null
+	-- foreign key(id_estacao) references estacao(id)
 );
 
-create table historico(
+create table dac.historico(
 	id int auto_increment primary key,
 	acao varchar(255),
 	data_inicio date not null,
@@ -39,11 +39,11 @@ create table historico(
 	id_estacao int,
 	id_usuario int,
 	foreign key (id_bicicleta) references bicicleta(id),
-	foreign key (id_estacao) references estacao(id),
+	foreign key (id_estacao) references estacao(id)
 	-- foreign key (id_usuario) references usuario(id)
 );
 
-create table historico_bike(
+create table dac.historico_bike(
 	id int auto_increment primary key,
 	data date not null,
 	motivo_retirada varchar(255) not null,
@@ -51,7 +51,7 @@ create table historico_bike(
 	foreign key (id_bicicleta) references bicicleta(id)
 );
 
-create table punicao(
+create table dac.punicao(
 	id int auto_increment primary key,
 	ativa boolean not null,
 	inicio date not null,
@@ -63,7 +63,7 @@ create table punicao(
 	foreign key (id_usuario) references usuario(id)
 );
 
-create table administrador(
+create table dac.administrador(
 	id int auto_increment primary key,
 	nome varchar(255) not null,
 	cpf varchar(255) not null,
