@@ -17,7 +17,6 @@
     <div class="panel panel-default">
         <div class="panel-heading" style="height: 73px;">
             <h3 style="float: left;">bicicletas</h3>
-            <a class="btn btn-default" href="/bicicletas" style="margin: 16px 0px 0px 17px;">Create bicicleta</a>
         </div>
         <div class="panel-body">
             <table class="table table-condensed" style="border-collapse:collapse;">
@@ -28,8 +27,6 @@
                     <th>Estação</th>
                     <th>Ativa</th>
                     <th>Em Uso</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
                 </tr>
                 </thead>
 
@@ -40,15 +37,8 @@
                         <td>${bicicleta.getIdEstacao()}</td>
                         <td>${bicicleta.isAtiva()}</td>
                         <td>${bicicleta.isEmUso()}</td>
-                        <td>
-                            <a class="btn btn-default" href="/bicicletas?id=${bicicleta.getId()}">Edit</a>
-                        </td>
-                        <td>
-                            <form action="/deleteBicicleta" method="post">
-                                <input name="id" type="hidden" value="${bicicleta.getId()}"/>
-                                <input name="type" type="hidden" value="bicicleta"/>
-                                <button class="btn btn-default" type="submit">Delete</button>
-                            </form>
+                      	<td>
+                            <a class="btn btn-default" href="/reservarBicicleta?id=${bicicleta.getId()}">Reservar</a>
                         </td>
                     </tr>
                  

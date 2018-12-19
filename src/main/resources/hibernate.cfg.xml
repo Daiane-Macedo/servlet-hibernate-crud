@@ -19,6 +19,7 @@
         <mapping class="br.com.dac.entity.User"></mapping>
         <mapping class="br.com.dac.entity.Bicicleta"></mapping>
         <mapping class="br.com.dac.entity.Estacao"></mapping>
-        
+        <mapping class="br.com.dac.entity.Administrador"></mapping>
+        <mapping class="br.com.dac.entity.Punicao"></mapping>
     </session-factory>
 </hibernate-configuration>

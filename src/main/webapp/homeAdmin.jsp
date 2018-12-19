@@ -10,23 +10,12 @@
    		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    	 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-   	 	<link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
  	   <style>
         	<%@include file="home.css" %>
 		</style>  
 	</head>
 	<body>
-	<div class="menu">
-		<ul>
-			<li><a href="#">Bike UFF</a></li>
-			<ul style="float:right;list-style-type:none;">
-				<li><a href="#">Perfil</href></a></li>
-  				<li><a href="#">Logout
-					<img src="images/logout.png" style="width:15px;height:15px;">
-				</a></li>
-			</ul>
-		</ul>
-	</div>
+	<jsp:include page="navbar.jsp" />
 	</div>
 		<div class="box">
 			<a href="/usersList">Usuários</a>

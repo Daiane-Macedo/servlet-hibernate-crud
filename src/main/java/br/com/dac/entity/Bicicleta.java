@@ -13,6 +13,7 @@ import javax.persistence.Table;
     @NamedQuery(name = "Bicicleta.findAll", query = "SELECT b FROM Bicicleta b")
     , @NamedQuery(name = "Bicicleta.findBicicletaById", query = "SELECT b FROM Bicicleta b WHERE b.id = :id")
     , @NamedQuery(name = "Bicicleta.findByCodigo", query = "SELECT b FROM Bicicleta b WHERE b.codigo = :codigo")
+    , @NamedQuery(name = "Bicicleta.findByEstacaoId", query = "SELECT b FROM Bicicleta b WHERE b.idEstacao = :idEstacao")
     , @NamedQuery(name = "Bicicleta.findByAtiva", query = "SELECT b FROM Bicicleta b WHERE b.ativa = :ativa")})
 
 

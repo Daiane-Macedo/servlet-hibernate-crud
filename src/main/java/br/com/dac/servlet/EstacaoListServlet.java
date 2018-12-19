@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.dac.Helper;
+import br.com.dac.dao.EstacaoDAO;
 import br.com.dac.dao.FactoryDAO;
 import br.com.dac.entity.Estacao;
 
@@ -20,6 +22,7 @@ public class EstacaoListServlet extends HttpServlet{
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+
 
 		List<Estacao> estacoes = (List<Estacao>) FactoryDAO.getFactory().getEstacaoDAO().listAll();		
 		 req.setAttribute("estacoes", estacoes);

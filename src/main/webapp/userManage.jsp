@@ -10,6 +10,7 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
+<jsp:include page="navbar.jsp" />
 <div class="container">
     <form action="/users" method="post" role="form" data-toggle="validator">
         <input type="hidden" id="id" name="id" value="${user == null ? "" : user.getId()}">

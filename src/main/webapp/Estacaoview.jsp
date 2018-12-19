@@ -14,7 +14,6 @@
 <div class="container">
     <form action="/estacoes" method="post" role="form" data-toggle="validator">
         <input type="hidden" id="id" name="id" value="${estacao == null ? "" : estacao.getId()}">
-        <h2 class="col-xs-offset-3">${estacao == null ? "Create estacao" : "Edit estacao"}</h2>
         <div class="form-horizontal col-xs-7">
             <c:if test="${error != null}">
                 <div class="alert alert-danger">
@@ -24,22 +23,21 @@
             <div class="form-group">
                 <label for="codigo" class="control-label col-xs-3">Nome:</label>
                 <div class="col-xs-9">
-                    <input type="text" name="nome" id="nome" class="form-control"
-                           value="${estacao.getNome()}" required="true"/>
+                    <input type="text" name="nome" id="nome" class="form-control"value="${estacao.getNome()}" disabled/>
                 </div>
             </div>
              <div class="form-group">
                 <label for="capacidade" class="control-label col-xs-3">Capacidade:</label>
                 <div class="col-xs-9">
                     <input type="number" name="capacidade" id="capacidade" class="form-control" value="${estacao.getCapacidade()}"
-                           required="true"/>
+                           required="true" disabled/>
                 </div>
             </div>
             <div class="form-group">
                 <label for="qtdSlotsDisponiveis" class="control-label col-xs-3">Slots Disponíveis:</label>
                 <div class="col-xs-9">
                     <input type="number" name="qtdSlotsDisponiveis" id="qtdSlotsDisponiveis" class="form-control" value="${estacao.getQtdSlotsDisponiveis()}"
-                           required="true"/>
+                           required="true" disabled/>
                 </div>
             </div>  
             <div class="form-group">
@@ -47,34 +45,15 @@
                 <div class="col-xs-9">
                     <input type="number" name="ativa" id="ativa" class="form-control"
                            value="${estacao.isAtiva()}"
-                           required="true"/>
+                           required="true" disabled/>
                 </div>
             </div>
             <div class="form-group">
                 <label for="localizacao" class="control-label col-xs-3">Localização:</label>
                 <div class="col-xs-9">
                     <input type="text" name="localizacao" id="localizacao" class="form-control"
-                           value="${estacao.getLocalizacao()}"
-                           required="true"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-xs-9">
-                    <input type="hidden" name="latitude" id="latitude" class="form-control"
-                           value="${estacao.getLatitude()}"
-                           required="true" hidden/>
-                </div>
-            </div>
-           <div class="form-group">
-                <div class="col-xs-9">
-                    <input type="hidden" name="longitude" id="longitude" class="form-control"
-                           value="${estacao.getLongitude()}"
-                           required="true" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-xs-offset-3 col-sm-10">
-                    <button type="submit" class="btn btn-default">Submit</button>
+                           value="${estacao.getLocalizacao()} disabled"
+                            disabled/>
                 </div>
             </div>
         </div>

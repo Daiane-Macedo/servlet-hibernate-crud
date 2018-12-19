@@ -25,5 +25,11 @@ public class HibernateFactoryDAO extends FactoryDAO{
 		return new HistoricoDAO();
 	}
 
+	@Override
+	public AdministradorDAO getAdministradorDAO() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
 

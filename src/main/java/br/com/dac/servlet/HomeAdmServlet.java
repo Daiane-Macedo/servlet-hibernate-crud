@@ -9,13 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(
-        name = "MainServlet",
-        urlPatterns = {"/"}
+        name = "HomeAdmServlet",
+        urlPatterns = {"/homeAdm"}
 )
-public class MainServlet extends HttpServlet{
+public class HomeAdmServlet extends HttpServlet{
     @Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 	        throws IOException, ServletException {
-	    req.getRequestDispatcher("/homeAdmin.jsp").forward(req, resp);
+	   
+    	req.getRequestDispatcher("/homeAdmin.jsp").forward(req, resp);
 	}
 }

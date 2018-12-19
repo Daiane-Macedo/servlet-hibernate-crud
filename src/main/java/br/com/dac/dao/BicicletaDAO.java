@@ -12,6 +12,16 @@ public class BicicletaDAO<T> extends HibernateDAO<T, Serializable>{
 		super(Bicicleta.class);
 	}
 	
+	public Bicicleta findByEstacaoId(int idEstacao){
+		List<Bicicleta> list = HibernateUtil.getSession().getNamedQuery("Bicicleta.findByEstacaoId")
+				.setInteger("idEstacao", idEstacao).list();
+		
+		if (list.isEmpty())
+			return null;
+		
+		return list.get(0);
+		
+	}
 	public Bicicleta findByid(int id){
 		
 		List<Bicicleta> list = HibernateUtil.getSession().getNamedQuery("Bicicleta.findBicicletaById")

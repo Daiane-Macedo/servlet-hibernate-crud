@@ -20,6 +20,8 @@ public abstract class FactoryDAO {
 
 	public abstract UsuarioDAO getUsuarioDAO();
 	
+	public abstract AdministradorDAO getAdministradorDAO();
+
 	public abstract EstacaoDAO getEstacaoDAO();
 
 	public abstract HistoricoDAO getHistoricoDAO();
