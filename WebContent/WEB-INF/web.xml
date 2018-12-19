@@ -73,9 +73,13 @@
  		<servlet-name>EstacaoListServlet</servlet-name>
  		<url-pattern>/listaEstacoes(</url-pattern>
  	</servlet-mapping>
- 	 	<servlet-mapping>
+ 	 <servlet-mapping>
  		<servlet-name>EstacaoManagerServlet</servlet-name>
  		<url-pattern>/estacoes(</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>EstacaoDeleteServlet</servlet-name>
+ 		<url-pattern>/deleteEstacao(</url-pattern>
  	</servlet-mapping>
  	<servlet-mapping>
  		<servlet-name>HomeAdmServlet</servlet-name>
@@ -87,5 +91,14 @@
  		<url-pattern>/(</url-pattern>
  	</servlet-mapping>
  	
+ 	 <servlet-mapping>
+ 		<servlet-name>estacaoView</servlet-name>
+ 		<url-pattern>/estacaoView(</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	 <servlet-mapping>
+ 		<servlet-name>reservaServlet</servlet-name>
+ 		<url-pattern>/reservarBicicleta(</url-pattern>
+ 	</servlet-mapping>
  	
 </web-app>
