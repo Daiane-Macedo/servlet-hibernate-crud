@@ -15,7 +15,8 @@ create table estacao(
 	ativa boolean not null,
 	nome varchar(255) not null,
 	latitude varchar(255),
-	longitude varchar(255)
+	longitude varchar(255),
+	localizacao varchar(255)
 );
 
 create table bicicleta(

@@ -21,7 +21,20 @@
         <servlet-name>UsersManagerServlet</servlet-name>
         <servlet-class>br.com.dac.servlet</servlet-class>
 	</servlet>   
-	 
+	<servlet>
+        <servlet-name>BicicletaListServlet</servlet-name>
+        <servlet-class>br.com.dac.servlet</servlet-class>
+	</servlet>  
+	<servlet>
+        <servlet-name>BicicletasManageServlet</servlet-name>
+        <servlet-class>br.com.dac.servlet</servlet-class>
+	</servlet>  
+		<servlet>
+        <servlet-name>EstacaoListServlet</servlet-name>
+        <servlet-class>br.com.dac.servlet</servlet-class>
+	</servlet>  
+	
+	
 	<servlet-mapping> 
  		<servlet-name>MainServlet</servlet-name>
  		<url-pattern>/</url-pattern>
@@ -34,8 +47,34 @@
  		<servlet-name>UserManageServlet</servlet-name>
  		<url-pattern>/users(</url-pattern>
  	</servlet-mapping>
- 		<servlet-mapping>
+ 	<servlet-mapping>
  		<servlet-name>UserDeleteServlet</servlet-name>
  		<url-pattern>/delete(</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<servlet-mapping>
+ 		<servlet-name>BicicletasManageServlet</servlet-name>
+ 		<url-pattern>/bicicletas(</url-pattern>
+ 	</servlet-mapping>
+ 	 	<servlet-mapping>
+ 		<servlet-name>BicicletaListServlet</servlet-name>
+ 		<url-pattern>/listaBicicletas(</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>BicicletaDeleteServlet</servlet-name>
+ 		<url-pattern>/deleteBicicleta(</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<servlet-mapping>
+ 		<servlet-name>EstacaoListServlet</servlet-name>
+ 		<url-pattern>/listaEstacoes(</url-pattern>
+ 	</servlet-mapping>
+ 	 	<servlet-mapping>
+ 		<servlet-name>EstacaoManagerServlet</servlet-name>
+ 		<url-pattern>/estacoes(</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>EstacaoDeleteServlet</servlet-name>
+ 		<url-pattern>/deleteEstacao(</url-pattern>
  	</servlet-mapping>
 </web-app>

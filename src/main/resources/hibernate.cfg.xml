@@ -18,5 +18,7 @@
         <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
         <mapping class="br.com.dac.entity.User"></mapping>
         <mapping class="br.com.dac.entity.Bicicleta"></mapping>
+        <mapping class="br.com.dac.entity.Estacao"></mapping>
+        
     </session-factory>
 </hibernate-configuration>

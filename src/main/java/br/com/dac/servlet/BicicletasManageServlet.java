@@ -59,21 +59,20 @@ public class BicicletasManageServlet extends HttpServlet {
         if (!(req.getParameter("codigo").isEmpty())) {
         	bicicleta.setCodigo(Integer.parseInt(req.getParameter("codigo")));
         }
-        
-        if(bicicleta == null) {
-	        req.setAttribute("bicicleta", bicicleta);
-	        req.setAttribute("error", "Invalid data");
-	        req.getRequestDispatcher("bicicletasManage.jsp").forward(req, resp);  
-	        return;
+
+        try {
+	        dao.beginTransaction();
+			dao.save(bicicleta);
+			dao.commitTransaction(); 
+			resp.sendRedirect("/listaBicicletas");
+			
+        }catch(Exception e) {
+        	req.setAttribute("bicicleta", bicicleta);
+ 	        req.setAttribute("error", "Dados inválidos");
+ 	        req.getRequestDispatcher("bicicletasManage.jsp").forward(req, resp);  
+ 	        return;
         }
-        dao.beginTransaction();
-		dao.save(bicicleta);
-		dao.commitTransaction(); 
-		resp.sendRedirect("/listaBicicletas");
-    
-    	}
-    	private int parseInt(String parameter) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    }
+    		
 }
+

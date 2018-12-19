@@ -10,12 +10,13 @@ public class BicicletaDAO<T> extends HibernateDAO<T, Serializable>{
 
 	public BicicletaDAO() {
 		super(Bicicleta.class);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Bicicleta findByid(int id){
+		
 		List<Bicicleta> list = HibernateUtil.getSession().getNamedQuery("Bicicleta.findBicicletaById")
 				.setInteger("id", id).list();
+		
 		if (list.isEmpty()) {
 			return null;
 		}

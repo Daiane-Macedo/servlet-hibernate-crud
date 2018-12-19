@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="pt-br">
 <head>
-    <title>bicicletas</title>
+    <title>estacoes</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -14,37 +14,39 @@
 
     <div class="panel panel-default">
         <div class="panel-heading" style="height: 73px;">
-            <h3 style="float: left;">bicicletas</h3>
-            <a class="btn btn-default" href="/bicicletas" style="margin: 16px 0px 0px 17px;">Create bicicleta</a>
+            <h3 style="float: left;">estacoes</h3>
+            <a class="btn btn-default" href="/estacoes" style="margin: 16px 0px 0px 17px;">Create estacao</a>
         </div>
         <div class="panel-body">
             <table class="table table-condensed" style="border-collapse:collapse;">
 
                 <thead>
                 <tr>
-                    <th>Código</th>
-                    <th>Estação</th>
+                    <th>Nome</th>
+                    <th>Capacidade</th>
+                    <th>Slotes Disponíveis:</th>
                     <th>Ativa</th>
-                    <th>Em Uso</th>
-                    <th>Edit</th>
+                    <th>Localização</th>
+                    <th>Editar</th>
                     <th>Delete</th>
                 </tr>
                 </thead>
 
                 <tbody>
-                <c:forEach var="bicicleta" items="${bicicletas}">
-                    <tr data-toggle="collapse" data-target="#tablebicicleta${bicicleta.getId()}" class="accordion-toggle">
-                        <td>${bicicleta.getCodigo()}</td>
-                        <td>${bicicleta.getIdEstacao()}</td>
-                        <td>${bicicleta.isAtiva()}</td>
-                        <td>${bicicleta.isEmUso()}</td>
+                <c:forEach var="estacao" items="${estacoes}">
+                    <tr data-toggle="collapse" data-target="#tableestacao${estacao.getId()}" class="accordion-toggle">
+                        <td>${estacao.getNome()}</td>
+                        <td>${estacao.getCapacidade()}</td>
+                        <td>${estacao.isAtiva()}</td>
+                        <td>${estacao.getQtdSlotsDisponiveis()}</td>
+                        <td>${estacao.getLocalizacao()}</td>
                         <td>
-                            <a class="btn btn-default" href="/bicicletas?id=${bicicleta.getId()}">Edit</a>
+                            <a class="btn btn-default" href="/estacoes?id=${estacao.getId()}">Edit</a>
                         </td>
                         <td>
-                            <form action="/deleteBicicleta" method="post">
-                                <input name="id" type="hidden" value="${bicicleta.getId()}"/>
-                                <input name="type" type="hidden" value="bicicleta"/>
+                            <form action="/deleteEstacao" method="post">
+                                <input name="id" type="hidden" value="${estacao.getId()}"/>
+                                <input name="type" type="hidden" value="estacao"/>
                                 <button class="btn btn-default" type="submit">Delete</button>
                             </form>
                         </td>
