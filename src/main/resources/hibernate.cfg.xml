@@ -21,5 +21,6 @@
         <mapping class="br.com.dac.entity.Estacao"></mapping>
         <mapping class="br.com.dac.entity.Administrador"></mapping>
         <mapping class="br.com.dac.entity.Punicao"></mapping>
+        <mapping class="br.com.dac.entity.Historico"></mapping>
     </session-factory>
 </hibernate-configuration>

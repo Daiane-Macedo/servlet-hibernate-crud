@@ -16,7 +16,7 @@
 			<li><a href="/homeUser">Bike UFF</a></li>
 				<ul style="float:right;list-style-type:none;">
 					<!-- <li><a href="#">Perfil</href></a></li>  -->
-		  			<li><a href="#">Logout
+		  			<li><a href="/homeAdm">Administrador
 						<img src="images/logout.png" style="width:15px;height:15px;">
 						</a>
 					</li>

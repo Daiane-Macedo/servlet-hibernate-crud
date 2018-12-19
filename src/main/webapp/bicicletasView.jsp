@@ -13,7 +13,16 @@
 <jsp:include page="navbar.jsp" />
 
 <div class="container">
-
+ <c:if test="${error != null}">
+   <div class="alert alert-danger">
+              ${error}
+     </div>
+  </c:if>
+   <c:if test="${success != null}">
+   <div class="success">
+              ${success}
+     </div>
+  </c:if>
     <div class="panel panel-default">
         <div class="panel-heading" style="height: 73px;">
             <h3 style="float: left;">bicicletas</h3>
@@ -38,7 +47,8 @@
                         <td>${bicicleta.isAtiva()}</td>
                         <td>${bicicleta.isEmUso()}</td>
                       	<td>
-                            <a class="btn btn-default" href="/reservarBicicleta?id=${bicicleta.getId()}">Reservar</a>
+                            <a class="btn btn-default" href="/reservarBicicleta?bikeId=${bicicleta.getId()}&estacaoId=${bicicleta.getIdEstacao()}">
+                            Reservar</a>
                         </td>
                     </tr>
                  

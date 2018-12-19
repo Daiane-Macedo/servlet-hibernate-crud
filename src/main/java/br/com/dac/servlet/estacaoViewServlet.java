@@ -1,4 +1,4 @@
-package br.com.dac.servletes;
+package br.com.dac.servlet;
 
 import java.io.IOException;
 import java.util.List;

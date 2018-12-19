@@ -40,7 +40,7 @@ create table historico(
 	id_usuario int,
 	foreign key (id_bicicleta) references bicicleta(id),
 	foreign key (id_estacao) references estacao(id),
-	foreign key (id_usuario) references usuario(id)
+	-- foreign key (id_usuario) references usuario(id)
 );
 
 create table historico_bike(

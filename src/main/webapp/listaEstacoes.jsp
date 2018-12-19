@@ -38,8 +38,8 @@
                     <tr data-toggle="collapse" data-target="#tableestacao${estacao.getId()}" class="accordion-toggle">
                         <td>${estacao.getNome()}</td>
                         <td>${estacao.getCapacidade()}</td>
-                        <td>${estacao.isAtiva()}</td>
                         <td>${estacao.getQtdSlotsDisponiveis()}</td>
+                        <td>${estacao.isAtiva()}</td>
                         <td>${estacao.getLocalizacao()}</td>
                         <td>
                             <a class="btn btn-default" href="/estacoes?id=${estacao.getId()}">Edit</a>
